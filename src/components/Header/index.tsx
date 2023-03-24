@@ -1,6 +1,7 @@
 import { HeaderContainer, HeaderContent, NewTransactionButton } from "./styles";
 import * as Dialog from '@radix-ui/react-dialog'
 import logoImg from '../../assets/logo.svg'
+import { NewTransactionModal } from "../NewTransactionModal";
 export function Header(){
     return(
         <div>
@@ -13,14 +14,8 @@ export function Header(){
                         <Dialog.Trigger asChild>
                             <NewTransactionButton>Nova transação</NewTransactionButton>
                         </Dialog.Trigger>
-                        {/* isso serve para o conteudo nao ficar preso a nenhuma div header e etc. ficar sobre eles */}
-                        <Dialog.Portal>
-                            {/* serve para deiar o fundo meio opaco esse over play. e o content é o conteudo */}
-                            <Dialog.Overlay/>
-                            <Dialog.Content>
-
-                            </Dialog.Content>
-                        </Dialog.Portal>
+                        {/* Permite que criamos um conteudo totalmente fora do contexto da aplciacao. fora do proprio root*/}
+                        <NewTransactionModal/>
                     </Dialog.Root>
                 </HeaderContent>
             </HeaderContainer>
