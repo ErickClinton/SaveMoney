@@ -29,6 +29,8 @@ export function TransactionsProvider({children}: TransactionsProviderProps){
     useEffect(()=>{
         loadTransictions()
     },[])
+
+    
     return(
         /* children serve para redenerizar o componente filho */
         <TransactionContext.Provider value={{transactions}}>    {children}    </TransactionContext.Provider>
